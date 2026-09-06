@@ -4,6 +4,8 @@
   python -m shengxuezhidao search --country 英国 --route alevel
   python -m shengxuezhidao recommend --route alevel --ielts 7.0 --budget 400000
   python -m shengxuezhidao ask "曼彻斯特大学高考要多少分?"
+  python -m shengxuezhidao ask "澳洲哪些学校接受高考" --api-key sk-xxx
+  python -m shengxuezhidao llm-config          # 查看/生成当前 LLM 接入配置
   python -m shengxuezhidao stats
 """
 from __future__ import annotations
@@ -40,6 +42,18 @@ def _add_recommend_args(sp):
     sp.add_argument("--top", type=int, default=8)
 
 
+def _add_llm_args(sp):
+    """在支持 LLM 的子命令上增加可选接入参数。"""
+    g = sp.add_argument_group("LLM 接入(可选, 覆盖环境变量)")
+    g.add_argument("--api-key", default=None, help="API 密钥(默认读 SXZD_LLM_API_KEY)")
+    g.add_argument("--base-url", default=None, help="API 地址(默认 DeepSeek)")
+    g.add_argument("--model", default=None, help="模型名(默认 deepseek-chat)")
+    g.add_argument("--provider", default=None,
+                   help="提供商预设: deepseek/openai/qwen/glm/ollama/moonshot/siliconflow")
+    g.add_argument("--timeout", type=int, default=None, help="请求超时(秒)")
+    g.add_argument("--no-llm", action="store_true", help="强制使用本地检索(禁用LLM)")
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         prog="shengxuezhidao",
@@ -64,6 +78,13 @@ def build_parser() -> argparse.ArgumentParser:
     sp = sub.add_parser("ask", help="AI 知识库问答/二次询问")
     sp.add_argument("question", nargs="?", help="问题, 缺省进入交互")
     sp.add_argument("--country", default=None)
+    _add_llm_args(sp)
+
+    # llm-config (查看 LLM 接入配置)
+    sp = sub.add_parser("llm-config",
+                        help="查看 LLM 接入配置 / 生成接入说明")
+    sp.add_argument("--env", action="store_true",
+                    help="输出可复制粘贴的环境变量配置示例")
 
     # stats
     sub.add_parser("stats", help="资料库统计")
@@ -83,6 +104,30 @@ def build_parser() -> argparse.ArgumentParser:
     sp.add_argument("out", default="data/schools.json", nargs="?")
 
     return p
+
+
+def _make_assistant(no_llm: bool = False, api_key=None, base_url=None,
+                    model=None, provider=None, timeout=None):
+    """创建 Assistant, 支持从 args 覆盖 LLM 配置。"""
+    from ..ai import Assistant
+    from ..ai.kb import KnowledgeBase
+    c = _catalog()
+    kb = KnowledgeBase(c)
+    kwargs = {}
+    if api_key is not None:
+        kwargs["api_key"] = api_key
+    if base_url is not None:
+        kwargs["base_url"] = base_url
+    if model is not None:
+        kwargs["model"] = model
+    if provider is not None:
+        kwargs["provider"] = provider
+    if timeout is not None:
+        kwargs["timeout"] = timeout
+    if no_llm:
+        kwargs["api_key"] = ""   # 强制禁用 LLM
+        kwargs["provider"] = ""
+    return Assistant(kb, **kwargs)
 
 
 def cmd_search(args) -> int:
@@ -129,11 +174,9 @@ def cmd_recommend(args) -> int:
     if not recs:
         print("根据当前画像未坍缩出可行方案, 请补充信息或用 --low 放宽。")
         # 提示追问
-        from ..ai import Assistant
-        from ..ai.kb import KnowledgeBase
-        kb = KnowledgeBase(c)
+        asst = _make_assistant()
         print("\n建议补充以下信息(二次询问):")
-        for q in Assistant(kb).clarify(prof):
+        for q in asst.clarify(prof):
             print("  - " + q)
         return 0
     print(f"根据你的画像(线路:{ROUTE_LABEL.get(args.route, args.route)}"
@@ -144,17 +187,58 @@ def cmd_recommend(args) -> int:
 
 
 def cmd_ask(args) -> int:
-    c = _catalog()
-    from ..ai import Assistant
-    from ..ai.kb import KnowledgeBase
-    kb = KnowledgeBase(c)
-    asst = Assistant(kb)
+    from ..ai import LLMConfig
+
+    asst = _make_assistant(
+        no_llm=args.no_llm,
+        api_key=args.api_key,
+        base_url=args.base_url,
+        model=args.model,
+        provider=args.provider,
+        timeout=args.timeout,
+    )
+    # 打印当前引擎状态
+    state = asst.source_label
+    if not asst.llm_ready:
+        hint = ("强制本地检索模式。" if args.no_llm
+                else "设置 SXZD_LLM_API_KEY 或使用 --api-key 接入 LLM。")
+        print(f"[当前: {state}] {hint}\n")
     if args.question:
         ans = asst.ask(args.question, country=args.country or "")
         print(ans.pretty)
         return 0
-    print("升学知识库问答已就绪(输入 exit 退出)\n")
+    print(f"[问答引擎: {state}] 输入 exit 退出\n")
     interactive.ask_loop(asst)
+    return 0
+
+
+def cmd_llm_config(args) -> int:
+    """查看/输出 LLM 接入配置。"""
+    from ..ai import LLMConfig, KNOWN_PROVIDERS, DEFAULT_PROVIDER
+
+    cfg = LLMConfig.load()
+    print("=== LLM 接入配置 ===")
+    print(f"提供商(provider): {cfg.provider or '(默认)'}")
+    print(f"API 地址(base_url): {cfg.base_url}")
+    print(f"模型(model): {cfg.model}")
+    print(f"API Key: {'✅ 已配置 (sk-' + cfg.api_key[-4:] + ')' if cfg.api_key else '❌ 未配置'}")
+    print(f"超时: {cfg.timeout}s | 最大生成: {cfg.max_tokens} tokens | 温度: {cfg.temperature}")
+    print(f"LLM 启用: {'✅' if cfg.effective_enabled else '❌ (无 Key, 走本地检索)'}")
+
+    if args.env:
+        print("\n--- 可复制到 shell 的环境变量 ---")
+        print(f"export SXZD_LLM_API_KEY={cfg.api_key or 'sk-你的密钥'}")
+        print(f"export SXZD_LLM_BASE_URL={cfg.base_url}")
+        print(f"export SXZD_LLM_MODEL={cfg.model}")
+        if cfg.provider:
+            print(f"export SXZD_LLM_PROVIDER={cfg.provider}")
+
+    print(f"\n内置 provider 预设:")
+    for name, conf in KNOWN_PROVIDERS.items():
+        mark = " ◀ 当前" if name == cfg.provider else ""
+        print(f"  - {name}: base_url={conf['base_url']}, model={conf['model']}{mark}")
+
+    print("\n更多自定义: 参见 README「AI 接入配置」章节。")
     return 0
 
 
@@ -217,6 +301,7 @@ def main(argv=None) -> int:
         "search": cmd_search,
         "recommend": cmd_recommend,
         "ask": cmd_ask,
+        "llm-config": cmd_llm_config,
         "stats": cmd_stats,
         "routes": cmd_routes,
         "update": cmd_update,
