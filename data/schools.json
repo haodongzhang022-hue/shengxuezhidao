@@ -1,0 +1,1240 @@
+{
+  "schools": [
+    {
+      "name": "Imperial College London",
+      "country": "英国",
+      "region": "欧洲/英国",
+      "qs_rank": 2,
+      "qs_part": "top500",
+      "fields": [
+        "工程",
+        "自然科学",
+        "商科",
+        "计算机"
+      ],
+      "city": "伦敦",
+      "tuition_currency": "CNY",
+      "paths": [
+        {
+          "path_type": "alevel",
+          "path_name": "A-Level 直申",
+          "applicable_countries": [
+            "CN",
+            "GB",
+            "HK",
+            "SG"
+          ],
+          "band": "very_hard",
+          "eligibility": [
+            "A-Level 3-4门",
+            "部分需入学笔试(如 MAT/ENGAA)"
+          ],
+          "deadline": "1月截止(UCAS)",
+          "note": "英联邦顶尖理工院校, 竞争极高",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 7.0,
+            "language_note": "单项≥6.5",
+            "exam": "A-Level",
+            "exam_score": 0,
+            "exam_note": "通常 A*A*A-AAA",
+            "gpa_min": 0,
+            "gpa_note": "",
+            "annual_cost": 0.0,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        },
+        {
+          "path_type": "ib",
+          "path_name": "IB 文凭",
+          "applicable_countries": [
+            "CN",
+            "GB",
+            "HK",
+            "SG"
+          ],
+          "band": "very_hard",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 7.0,
+            "language_note": "",
+            "exam": "IB",
+            "exam_score": 38,
+            "exam_note": "HL 需高分",
+            "gpa_min": 0.0,
+            "gpa_note": "",
+            "annual_cost": 0.0,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        },
+        {
+          "path_type": "ap",
+          "path_name": "AP 成绩申请(美国方向也可申请英国)",
+          "applicable_countries": [
+            "US",
+            "CN"
+          ],
+          "band": "very_hard",
+          "eligibility": [],
+          "deadline": "",
+          "note": "英校用 AP+SAT 申请亦可行但偏难",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 7.0,
+            "language_note": "",
+            "exam": "AP",
+            "exam_score": 0,
+            "exam_note": "建议多门5分+SAT",
+            "gpa_min": 3.8,
+            "gpa_note": "",
+            "annual_cost": 0.0,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "University of Cambridge",
+      "country": "英国",
+      "region": "欧洲/英国",
+      "qs_rank": 3,
+      "qs_part": "top500",
+      "fields": [
+        "全学科",
+        "数学",
+        "工程",
+        "法学",
+        "医学"
+      ],
+      "city": "剑桥",
+      "tuition_currency": "CNY",
+      "paths": [
+        {
+          "path_type": "alevel",
+          "path_name": "A-Level 直申",
+          "applicable_countries": [
+            "CN",
+            "GB",
+            "HK",
+            "SG"
+          ],
+          "band": "very_hard",
+          "eligibility": [],
+          "deadline": "UCAS 10月中",
+          "note": "",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 7.5,
+            "language_note": "",
+            "exam": "A-Level",
+            "exam_score": 0.0,
+            "exam_note": "A*AA-A*A*A, 部分需入学考",
+            "gpa_min": 0,
+            "gpa_note": "",
+            "annual_cost": 0.0,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        },
+        {
+          "path_type": "ib",
+          "path_name": "IB 文凭",
+          "applicable_countries": [
+            "CN",
+            "GB",
+            "HK",
+            "SG"
+          ],
+          "band": "very_hard",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 7.5,
+            "language_note": "",
+            "exam": "IB",
+            "exam_score": 40,
+            "exam_note": "",
+            "gpa_min": 0.0,
+            "gpa_note": "",
+            "annual_cost": 0.0,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stanford University",
+      "country": "美国",
+      "region": "北美/美国",
+      "qs_rank": 6,
+      "qs_part": "top500",
+      "fields": [
+        "全学科",
+        "工程",
+        "商科",
+        "CS"
+      ],
+      "city": "加州",
+      "tuition_currency": "CNY",
+      "paths": [
+        {
+          "path_type": "ap",
+          "path_name": "美国方向(AP/普通高中)",
+          "applicable_countries": [
+            "US",
+            "CN",
+            "HK",
+            "SG"
+          ],
+          "band": "very_hard",
+          "eligibility": [],
+          "deadline": "EA/ED/RD",
+          "note": "美国 Top 大学本科不看国内高考; 主要走 SAT/AP+文书+活动",
+          "requirement": {
+            "language_required": "TOEFL",
+            "language_score": 100,
+            "language_note": "",
+            "exam": "SAT",
+            "exam_score": 1450,
+            "exam_note": "推荐AP多门5分",
+            "gpa_min": 3.9,
+            "gpa_note": "",
+            "annual_cost": 600000,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        },
+        {
+          "path_type": "overseas_highschool",
+          "path_name": "美国高中毕业申",
+          "applicable_countries": [
+            "US"
+          ],
+          "band": "very_hard",
+          "eligibility": [],
+          "deadline": "",
+          "note": "以美高身份申请, 属本地池但门槛仍高",
+          "requirement": {
+            "language_required": "TOEFL",
+            "language_score": 100,
+            "language_note": "",
+            "exam": "SAT",
+            "exam_score": 1450,
+            "exam_note": "",
+            "gpa_min": 3.9,
+            "gpa_note": "",
+            "annual_cost": 600000,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "National University of Singapore",
+      "country": "新加坡",
+      "region": "亚洲/新加坡",
+      "qs_rank": 8,
+      "qs_part": "top500",
+      "fields": [
+        "全学科",
+        "工程",
+        "CS",
+        "商科"
+      ],
+      "city": "新加坡",
+      "tuition_currency": "CNY",
+      "paths": [
+        {
+          "path_type": "alevel",
+          "path_name": "A-Level",
+          "applicable_countries": [
+            "GB",
+            "SG",
+            "HK",
+            "CN"
+          ],
+          "band": "very_hard",
+          "eligibility": [],
+          "deadline": "",
+          "note": "新加坡国立录取竞争极高",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "A-Level",
+            "exam_score": 0.0,
+            "exam_note": "A*A*A-AAA",
+            "gpa_min": 0.0,
+            "gpa_note": "",
+            "annual_cost": 250000,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        },
+        {
+          "path_type": "ap",
+          "path_name": "AP/SAT",
+          "applicable_countries": [
+            "US",
+            "CN",
+            "SG",
+            "HK"
+          ],
+          "band": "very_hard",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "SAT",
+            "exam_score": 1500,
+            "exam_note": "",
+            "gpa_min": 3.8,
+            "gpa_note": "",
+            "annual_cost": 0.0,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "University of California, Berkeley",
+      "country": "美国",
+      "region": "北美/美国",
+      "qs_rank": 12,
+      "qs_part": "top500",
+      "fields": [
+        "CS",
+        "工程",
+        "商科",
+        "社科"
+      ],
+      "city": "加州",
+      "tuition_currency": "CNY",
+      "paths": [
+        {
+          "path_type": "ap",
+          "path_name": "美本常规申请",
+          "applicable_countries": [
+            "US",
+            "CN",
+            "HK",
+            "SG"
+          ],
+          "band": "hard",
+          "eligibility": [],
+          "deadline": "11月底(UC)",
+          "note": "",
+          "requirement": {
+            "language_required": "TOEFL",
+            "language_score": 90,
+            "language_note": "",
+            "exam": "SAT/ACT",
+            "exam_score": 0,
+            "exam_note": "",
+            "gpa_min": 3.8,
+            "gpa_note": "",
+            "annual_cost": 480000,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        },
+        {
+          "path_type": "overseas_highschool",
+          "path_name": "美高申请",
+          "applicable_countries": [
+            "US"
+          ],
+          "band": "hard",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "TOEFL",
+            "language_score": 90,
+            "language_note": "",
+            "exam": "",
+            "exam_score": 0.0,
+            "exam_note": "",
+            "gpa_min": 3.8,
+            "gpa_note": "",
+            "annual_cost": 480000,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "University of Melbourne",
+      "country": "澳大利亚",
+      "region": "大洋洲/澳大利亚",
+      "qs_rank": 13,
+      "qs_part": "top500",
+      "fields": [
+        "医学",
+        "商科",
+        "工程",
+        "法学"
+      ],
+      "city": "墨尔本",
+      "tuition_currency": "CNY",
+      "paths": [
+        {
+          "path_type": "gaokao",
+          "path_name": "高考成绩直申",
+          "applicable_countries": [
+            "CN"
+          ],
+          "band": "reachable",
+          "eligibility": [
+            "国内高考"
+          ],
+          "deadline": "每年2/7月入学",
+          "note": "澳洲八大普遍接受高考成绩, 是国内普高相对好走的国际名校路径",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "高考",
+            "exam_score": 0.0,
+            "exam_note": "",
+            "gpa_min": 0,
+            "gpa_note": "各省一本线附近",
+            "annual_cost": 330000,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        },
+        {
+          "path_type": "alevel",
+          "path_name": "A-Level",
+          "applicable_countries": [
+            "GB",
+            "HK",
+            "SG",
+            "CN"
+          ],
+          "band": "reachable",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "A-Level",
+            "exam_score": 0.0,
+            "exam_note": "BBB以上",
+            "gpa_min": 0.0,
+            "gpa_note": "",
+            "annual_cost": 0.0,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "University of Hong Kong",
+      "country": "中国香港",
+      "region": "亚洲/中国香港",
+      "qs_rank": 17,
+      "qs_part": "top500",
+      "fields": [
+        "全学科",
+        "医学",
+        "法学",
+        "商科"
+      ],
+      "city": "香港",
+      "tuition_currency": "CNY",
+      "paths": [
+        {
+          "path_type": "gaokao",
+          "path_name": "内地高考",
+          "applicable_countries": [
+            "CN"
+          ],
+          "band": "hard",
+          "eligibility": [
+            "内地高考生"
+          ],
+          "deadline": "多元卓越计划",
+          "note": "港大经高考招生, 录取门槛极高(接近清北线)",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "高考",
+            "exam_score": 0.0,
+            "exam_note": "",
+            "gpa_min": 0,
+            "gpa_note": "需省排名前列/顶尖线",
+            "annual_cost": 220000,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        },
+        {
+          "path_type": "alevel",
+          "path_name": "A-Level",
+          "applicable_countries": [
+            "GB",
+            "HK",
+            "SG",
+            "CN"
+          ],
+          "band": "hard",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "A-Level",
+            "exam_score": 0.0,
+            "exam_note": "A*AA-AAB",
+            "gpa_min": 0.0,
+            "gpa_note": "",
+            "annual_cost": 0.0,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        },
+        {
+          "path_type": "ap",
+          "path_name": "AP+SAT",
+          "applicable_countries": [
+            "US",
+            "CN",
+            "HK",
+            "SG"
+          ],
+          "band": "hard",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "SAT",
+            "exam_score": 1350,
+            "exam_note": "",
+            "gpa_min": 3.6,
+            "gpa_note": "",
+            "annual_cost": 220000,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        },
+        {
+          "path_type": "country_local",
+          "path_name": "香港本地 DSE",
+          "applicable_countries": [
+            "HK"
+          ],
+          "band": "medium",
+          "eligibility": [
+            "香港 DSE 考生"
+          ],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "DSE",
+            "exam_score": 0.0,
+            "exam_note": "",
+            "gpa_min": 0,
+            "gpa_note": "",
+            "annual_cost": 0.0,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "University of Sydney",
+      "country": "澳大利亚",
+      "region": "大洋洲/澳大利亚",
+      "qs_rank": 18,
+      "qs_part": "top500",
+      "fields": [
+        "医学",
+        "法学",
+        "商科",
+        "工程"
+      ],
+      "city": "悉尼",
+      "tuition_currency": "CNY",
+      "paths": [
+        {
+          "path_type": "gaokao",
+          "path_name": "高考成绩直申",
+          "applicable_countries": [
+            "CN"
+          ],
+          "band": "reachable",
+          "eligibility": [],
+          "deadline": "",
+          "note": "接受高考, 门槛适中",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "高考",
+            "exam_score": 0.0,
+            "exam_note": "",
+            "gpa_min": 0,
+            "gpa_note": "各省一本线上",
+            "annual_cost": 340000,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        },
+        {
+          "path_type": "alevel",
+          "path_name": "A-Level",
+          "applicable_countries": [
+            "GB",
+            "HK",
+            "SG",
+            "CN"
+          ],
+          "band": "reachable",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "A-Level",
+            "exam_score": 0.0,
+            "exam_note": "BBB",
+            "gpa_min": 0.0,
+            "gpa_note": "",
+            "annual_cost": 0.0,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "University of Toronto",
+      "country": "加拿大",
+      "region": "北美/加拿大",
+      "qs_rank": 25,
+      "qs_part": "top500",
+      "fields": [
+        "全学科",
+        "工程",
+        "医学",
+        "商科"
+      ],
+      "city": "多伦多",
+      "tuition_currency": "CNY",
+      "paths": [
+        {
+          "path_type": "gaokao",
+          "path_name": "高考成绩+会考",
+          "applicable_countries": [
+            "CN"
+          ],
+          "band": "reachable",
+          "eligibility": [],
+          "deadline": "",
+          "note": "多伦多大学可凭高考+会考成绩申请",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "高考",
+            "exam_score": 0.0,
+            "exam_note": "",
+            "gpa_min": 0,
+            "gpa_note": "需一本线附近",
+            "annual_cost": 300000,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        },
+        {
+          "path_type": "alevel",
+          "path_name": "A-Level",
+          "applicable_countries": [
+            "GB",
+            "HK",
+            "SG",
+            "CN"
+          ],
+          "band": "reachable",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "A-Level",
+            "exam_score": 0.0,
+            "exam_note": "BBB-ABB",
+            "gpa_min": 0.0,
+            "gpa_note": "",
+            "annual_cost": 0.0,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        },
+        {
+          "path_type": "overseas_highschool",
+          "path_name": "加拿大高中",
+          "applicable_countries": [
+            "CA"
+          ],
+          "band": "reachable",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "",
+            "exam_score": 0.0,
+            "exam_note": "",
+            "gpa_min": 3.4,
+            "gpa_note": "",
+            "annual_cost": 300000,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "Nanyang Technological University",
+      "country": "新加坡",
+      "region": "亚洲/新加坡",
+      "qs_rank": 26,
+      "qs_part": "top500",
+      "fields": [
+        "工程",
+        "CS",
+        "商科",
+        "艺术"
+      ],
+      "city": "新加坡",
+      "tuition_currency": "CNY",
+      "paths": [
+        {
+          "path_type": "alevel",
+          "path_name": "A-Level",
+          "applicable_countries": [
+            "GB",
+            "SG",
+            "HK",
+            "CN"
+          ],
+          "band": "hard",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "A-Level",
+            "exam_score": 0.0,
+            "exam_note": "AAA-AAA",
+            "gpa_min": 0.0,
+            "gpa_note": "",
+            "annual_cost": 0.0,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        },
+        {
+          "path_type": "ap",
+          "path_name": "AP/SAT",
+          "applicable_countries": [
+            "US",
+            "CN",
+            "SG",
+            "HK"
+          ],
+          "band": "hard",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "SAT",
+            "exam_score": 1450,
+            "exam_note": "",
+            "gpa_min": 3.7,
+            "gpa_note": "",
+            "annual_cost": 0.0,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "University of Edinburgh",
+      "country": "英国",
+      "region": "欧洲/英国",
+      "qs_rank": 27,
+      "qs_part": "top500",
+      "fields": [
+        "人文",
+        "医学",
+        "社科",
+        "计算机"
+      ],
+      "city": "爱丁堡",
+      "tuition_currency": "CNY",
+      "paths": [
+        {
+          "path_type": "alevel",
+          "path_name": "A-Level",
+          "applicable_countries": [
+            "CN",
+            "GB",
+            "HK",
+            "SG"
+          ],
+          "band": "reachable",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "A-Level",
+            "exam_score": 0.0,
+            "exam_note": "AAB-AAA",
+            "gpa_min": 0.0,
+            "gpa_note": "",
+            "annual_cost": 0.0,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        },
+        {
+          "path_type": "gaokao",
+          "path_name": "高考成绩直申(部分学院)",
+          "applicable_countries": [
+            "CN"
+          ],
+          "band": "reachable",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "高考",
+            "exam_score": 0.0,
+            "exam_note": "",
+            "gpa_min": 0,
+            "gpa_note": "成绩优异",
+            "annual_cost": 0.0,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "University of Manchester",
+      "country": "英国",
+      "region": "欧洲/英国",
+      "qs_rank": 32,
+      "qs_part": "top500",
+      "fields": [
+        "商科",
+        "计算机",
+        "工程",
+        "社科"
+      ],
+      "city": "曼彻斯特",
+      "tuition_currency": "CNY",
+      "paths": [
+        {
+          "path_type": "alevel",
+          "path_name": "A-Level 直申",
+          "applicable_countries": [
+            "CN",
+            "GB",
+            "HK",
+            "SG"
+          ],
+          "band": "reachable",
+          "eligibility": [],
+          "deadline": "UCAS 常规",
+          "note": "",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "A-Level",
+            "exam_score": 0.0,
+            "exam_note": "AAA-ABB",
+            "gpa_min": 0,
+            "gpa_note": "",
+            "annual_cost": 350000,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        },
+        {
+          "path_type": "ap",
+          "path_name": "AP+SAT",
+          "applicable_countries": [
+            "US",
+            "CN"
+          ],
+          "band": "reachable",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "AP",
+            "exam_score": 0.0,
+            "exam_note": "多门4-5分",
+            "gpa_min": 3.4,
+            "gpa_note": "",
+            "annual_cost": 350000,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        },
+        {
+          "path_type": "gaokao",
+          "path_name": "高考成绩直申",
+          "applicable_countries": [
+            "CN"
+          ],
+          "band": "accessible",
+          "eligibility": [
+            "国内高考"
+          ],
+          "deadline": "视年份滚动",
+          "note": "曼彻斯特接受高考成绩, 是国内普高生的相对低门槛方案",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "高考",
+            "exam_score": 0.0,
+            "exam_note": "需参加高考且分数达一本线",
+            "gpa_min": 0,
+            "gpa_note": "通常省一本线以上",
+            "annual_cost": 350000,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "The Chinese University of Hong Kong",
+      "country": "中国香港",
+      "region": "亚洲/中国香港",
+      "qs_rank": 36,
+      "qs_part": "top500",
+      "fields": [
+        "全学科",
+        "商科",
+        "医学",
+        "传媒"
+      ],
+      "city": "香港",
+      "tuition_currency": "CNY",
+      "paths": [
+        {
+          "path_type": "gaokao",
+          "path_name": "内地高考",
+          "applicable_countries": [
+            "CN"
+          ],
+          "band": "hard",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "高考",
+            "exam_score": 0.0,
+            "exam_note": "",
+            "gpa_min": 0,
+            "gpa_note": "顶尖/一本高分段",
+            "annual_cost": 220000,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        },
+        {
+          "path_type": "alevel",
+          "path_name": "A-Level",
+          "applicable_countries": [
+            "GB",
+            "HK",
+            "SG",
+            "CN"
+          ],
+          "band": "reachable",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "A-Level",
+            "exam_score": 0.0,
+            "exam_note": "AAA-AAB",
+            "gpa_min": 0.0,
+            "gpa_note": "",
+            "annual_cost": 0.0,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "University of British Columbia",
+      "country": "加拿大",
+      "region": "北美/加拿大",
+      "qs_rank": 38,
+      "qs_part": "top500",
+      "fields": [
+        "林业",
+        "海洋",
+        "商科",
+        "CS"
+      ],
+      "city": "温哥华",
+      "tuition_currency": "CNY",
+      "paths": [
+        {
+          "path_type": "gaokao",
+          "path_name": "高考成绩直申",
+          "applicable_countries": [
+            "CN"
+          ],
+          "band": "reachable",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "高考",
+            "exam_score": 0.0,
+            "exam_note": "",
+            "gpa_min": 0,
+            "gpa_note": "一本线",
+            "annual_cost": 290000,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        },
+        {
+          "path_type": "alevel",
+          "path_name": "A-Level",
+          "applicable_countries": [
+            "GB",
+            "HK",
+            "SG",
+            "CN"
+          ],
+          "band": "reachable",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "IELTS",
+            "language_score": 6.5,
+            "language_note": "",
+            "exam": "A-Level",
+            "exam_score": 0.0,
+            "exam_note": "BBB",
+            "gpa_min": 0.0,
+            "gpa_note": "",
+            "annual_cost": 0.0,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "University of Michigan",
+      "country": "美国",
+      "region": "北美/美国",
+      "qs_rank": 44,
+      "qs_part": "top500",
+      "fields": [
+        "工程",
+        "商科",
+        "教育",
+        "社科"
+      ],
+      "city": "密歇根",
+      "tuition_currency": "CNY",
+      "paths": [
+        {
+          "path_type": "ap",
+          "path_name": "美本常规",
+          "applicable_countries": [
+            "US",
+            "CN",
+            "HK",
+            "SG"
+          ],
+          "band": "reachable",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "TOEFL",
+            "language_score": 88,
+            "language_note": "",
+            "exam": "SAT/ACT",
+            "exam_score": 0.0,
+            "exam_note": "",
+            "gpa_min": 3.6,
+            "gpa_note": "",
+            "annual_cost": 450000,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        },
+        {
+          "path_type": "overseas_highschool",
+          "path_name": "美高申请",
+          "applicable_countries": [
+            "US"
+          ],
+          "band": "reachable",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "TOEFL",
+            "language_score": 88,
+            "language_note": "",
+            "exam": "",
+            "exam_score": 0.0,
+            "exam_note": "",
+            "gpa_min": 3.6,
+            "gpa_note": "",
+            "annual_cost": 450000,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "Arizona State University",
+      "country": "美国",
+      "region": "北美/美国",
+      "qs_rank": 219,
+      "qs_part": "top500",
+      "fields": [
+        "工程",
+        "商科",
+        "CS"
+      ],
+      "city": "亚利桑那",
+      "tuition_currency": "CNY",
+      "paths": [
+        {
+          "path_type": "ap",
+          "path_name": "美本常规(相对低门槛)",
+          "applicable_countries": [
+            "US",
+            "CN",
+            "HK",
+            "SG"
+          ],
+          "band": "accessible",
+          "eligibility": [],
+          "deadline": "滚动录取",
+          "note": "录取率较高, 语言/标化要求相对宽松, 常被用作保底校(录取率较高/要求宽松)",
+          "requirement": {
+            "language_required": "TOEFL",
+            "language_score": 61,
+            "language_note": "",
+            "exam": "SAT/ACT",
+            "exam_score": 0.0,
+            "exam_note": "",
+            "gpa_min": 3.0,
+            "gpa_note": "",
+            "annual_cost": 320000,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        },
+        {
+          "path_type": "overseas_highschool",
+          "path_name": "美高申请",
+          "applicable_countries": [
+            "US"
+          ],
+          "band": "accessible",
+          "eligibility": [],
+          "deadline": "",
+          "note": "",
+          "requirement": {
+            "language_required": "TOEFL",
+            "language_score": 61,
+            "language_note": "",
+            "exam": "",
+            "exam_score": 0.0,
+            "exam_note": "",
+            "gpa_min": 3.0,
+            "gpa_note": "",
+            "annual_cost": 320000,
+            "cost_currency": "CNY",
+            "note": ""
+          }
+        }
+      ]
+    }
+  ]
+}

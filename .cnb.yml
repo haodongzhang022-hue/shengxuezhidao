@@ -1,0 +1,20 @@
+.x-test: &test_pipeline
+  docker:
+    image: python:3.11
+  stages:
+    - name: install
+      script: |
+        pip install --quiet -e ".[dev]"
+    - name: test
+      script: |
+        python -m pytest -q
+
+main:
+  push:
+    - name: 升学之道-本体-CI
+      <<: *test_pipeline
+
+"$":
+  pull_request:
+    - name: 升学之道-本体-CI
+      <<: *test_pipeline

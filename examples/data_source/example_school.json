@@ -1,0 +1,27 @@
+[
+  {
+    "name": "University of Manchester",
+    "country": "英国",
+    "region": "欧洲/英国",
+    "city": "曼彻斯特",
+    "qs_rank": 32,
+    "qs_part": "top50",
+    "fields": ["商科", "计算机", "工程", "社科"],
+    "paths": [
+      {
+        "path_type": "gaokao",
+        "path_name": "国内高考",
+        "band": "accessible",
+        "requirement": {
+          "language_required": "IELTS",
+          "language_score": 6.5,
+          "exam": "高考",
+          "exam_note": "需参加高考且分数达一本线",
+          "annual_cost": 350000,
+          "cost_currency": "CNY"
+        },
+        "note": "示例：接受高考成绩，属相对低门槛方案。数值需以官网最新为准。"
+      }
+    ]
+  }
+]
