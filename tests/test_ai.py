@@ -62,7 +62,7 @@ def test_default_config_points_to_deepseek():
     _clean_env()
     cfg = LLMConfig.load()
     assert cfg.base_url == "https://api.deepseek.com"
-    assert cfg.model == "deepseek-chat"
+    assert cfg.model == "deepseek-v4-flash"
     assert cfg.provider == "deepseek"
     assert cfg.effective_enabled is False  # 无 key 时不启用
 
@@ -138,7 +138,7 @@ def test_llm_ready_state():
     # 有 key: ready
     asst2 = Assistant(kb, api_key="sk-test")
     assert asst2.llm_ready is True
-    assert asst2.config.model == "deepseek-chat"
+    assert asst2.config.model == "deepseek-v4-flash"
     assert asst2.config.provider == "deepseek"
 
 

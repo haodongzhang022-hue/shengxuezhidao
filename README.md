@@ -81,7 +81,7 @@ export SXZD_LLM_API_KEY=sk-你的DeepSeek密钥
 
 # 无需设置 base_url / model, 默认已是:
 #   base_url = https://api.deepseek.com
-#   model    = deepseek-chat
+#   model    = deepseek-v4-flash
 ```
 
 查看当前配置状态:
@@ -125,7 +125,7 @@ export SXZD_LLM_CONFIG=./sxzd_llm.json
 python -m shengxuezhidao ask "澳洲哪些大学接受高考" \
   --api-key sk-xxx \
   --base-url https://api.deepseek.com \
-  --model deepseek-chat \
+  --model deepseek-v4-flash \
   --provider deepseek
 ```
 
@@ -133,7 +133,7 @@ python -m shengxuezhidao ask "澳洲哪些大学接受高考" \
 
 | provider | base_url | model |
 |----------|----------|-------|
-| `deepseek` (默认) | `https://api.deepseek.com` | `deepseek-chat` |
+| `deepseek` (默认) | `https://api.deepseek.com` | `deepseek-v4-flash` |
 | `openai` | `https://api.openai.com/v1` | `gpt-4o-mini` |
 | `qwen` | `https://dashscope.aliyuncs.com/compatible-mode/v1` | `qwen-plus` |
 | `glm` | `https://open.bigmodel.cn/api/paas/v4` | `glm-4-flash` |

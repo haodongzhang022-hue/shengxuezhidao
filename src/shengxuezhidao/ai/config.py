@@ -8,7 +8,7 @@
 支持的配置项(前缀 SXZD_LLM_):
   SXZD_LLM_API_KEY    - API 密钥(必填才能真正发起生成式请求)
   SXZD_LLM_BASE_URL   - API 基础地址(默认 DeepSeek: https://api.deepseek.com)
-  SXZD_LLM_MODEL      - 模型名(默认 deepseek-chat)
+  SXZD_LLM_MODEL      - 模型名(默认 deepseek-v4-flash, 不带 vision 的文本版)
   SXZD_LLM_PROVIDER   - 提供商名(默认 deepseek; 可选 openai/qwen/glm/ollama 等)
   SXZD_LLM_TIMEOUT    - 请求超时(秒, 默认 60)
   SXZD_LLM_MAX_TOKENS - 生成上限(默认 2048)
@@ -21,7 +21,7 @@
 {
   "api_key": "sk-xxxx",
   "base_url": "https://api.deepseek.com",
-  "model": "deepseek-chat",
+  "model": "deepseek-v4-flash",
   "provider": "deepseek",
   "timeout": 60,
   "max_tokens": 2048,
@@ -42,7 +42,7 @@ from typing import Dict, Optional
 # DeepSeek 官方默认配置
 DEFAULT_PROVIDER = "deepseek"
 DEFAULT_BASE_URL = "https://api.deepseek.com"
-DEFAULT_MODEL = "deepseek-chat"
+DEFAULT_MODEL = "deepseek-v4-flash"
 DEFAULT_TIMEOUT = 60
 DEFAULT_MAX_TOKENS = 2048
 DEFAULT_TEMPERATURE = 0.2
@@ -51,7 +51,7 @@ DEFAULT_TEMPERATURE = 0.2
 KNOWN_PROVIDERS = {
     "deepseek": {
         "base_url": "https://api.deepseek.com",
-        "model": "deepseek-chat",
+        "model": "deepseek-v4-flash",
     },
     "openai": {
         "base_url": "https://api.openai.com/v1",

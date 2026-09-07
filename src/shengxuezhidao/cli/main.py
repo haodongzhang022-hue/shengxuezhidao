@@ -47,7 +47,7 @@ def _add_llm_args(sp):
     g = sp.add_argument_group("LLM 接入(可选, 覆盖环境变量)")
     g.add_argument("--api-key", default=None, help="API 密钥(默认读 SXZD_LLM_API_KEY)")
     g.add_argument("--base-url", default=None, help="API 地址(默认 DeepSeek)")
-    g.add_argument("--model", default=None, help="模型名(默认 deepseek-chat)")
+    g.add_argument("--model", default=None, help="模型名(默认 deepseek-v4-flash)")
     g.add_argument("--provider", default=None,
                    help="提供商预设: deepseek/openai/qwen/glm/ollama/moonshot/siliconflow")
     g.add_argument("--timeout", type=int, default=None, help="请求超时(秒)")
