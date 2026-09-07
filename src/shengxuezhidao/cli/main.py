@@ -7,6 +7,7 @@
   python -m shengxuezhidao ask "澳洲哪些学校接受高考" --api-key sk-xxx
   python -m shengxuezhidao llm-config          # 查看/生成当前 LLM 接入配置
   python -m shengxuezhidao stats
+  python -m shengxuezhidao serve               # 启动轻量 HTTP 查询服务(便捷查询)
 """
 from __future__ import annotations
 
@@ -102,6 +103,11 @@ def build_parser() -> argparse.ArgumentParser:
     # export
     sp = sub.add_parser("export", help="导出资料库为 JSON(便于归档/增量同步)")
     sp.add_argument("out", default="data/schools.json", nargs="?")
+
+    # serve (Web 查询服务)
+    sp = sub.add_parser("serve", help="启动轻量 HTTP 查询服务(便捷查询)")
+    sp.add_argument("--host", default="127.0.0.1", help="监听地址(默认 127.0.0.1)")
+    sp.add_argument("--port", type=int, default=8000, help="监听端口(默认 8000)")
 
     return p
 
@@ -291,6 +297,27 @@ def cmd_export(args) -> int:
     return 0
 
 
+def cmd_serve(args) -> int:
+    """启动轻量 HTTP 查询服务(便捷查询)。"""
+    from ..web import serve
+
+    print("启动升学之道 HTTP 查询服务 ...")
+    print(f"  地址: http://{args.host}:{args.port}")
+    print("  端点: /health /stats /routes /search /recommend /ask /llm-config")
+    print("  按 Ctrl+C 停止服务\n")
+    try:
+        httpd = serve(host=args.host, port=args.port)
+    except OSError as e:
+        print(f"启动失败: {e}")
+        print(f"请确认端口 {args.port} 未被占用, 或使用 --port 指定其它端口。")
+        return 1
+    try:
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        print("\n服务已停止。")
+    return 0
+
+
 def main(argv=None) -> int:
     p = build_parser()
     args = p.parse_args(argv)
@@ -306,6 +333,7 @@ def main(argv=None) -> int:
         "routes": cmd_routes,
         "update": cmd_update,
         "export": cmd_export,
+        "serve": cmd_serve,
     }
     return table[args.cmd](args)
 

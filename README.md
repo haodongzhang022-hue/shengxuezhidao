@@ -23,7 +23,8 @@
 | 规则层 `rules` | 各线路适用规则（高考/AP/A-Level/IB/海外高中/目标国本地）与学生可走线路推导 |
 | AI 知识库 `ai` | 把学校数据转成可检索文本片段；支持检索增强(RAG)、自然语言问答、画像补全型二次询问；**默认接 DeepSeek**，可切换任意 OpenAI 兼容大模型 |
 | 自动更新 `data.updater` | 数据源抽象 + 幂等同步（官网/授权 JSON 增量合并） |
-| 命令行 `cli` | 交互入口：`search / recommend / ask / llm-config / update / export / stats / routes` |
+| 命令行 `cli` | 交互入口：`search / recommend / ask / llm-config / update / export / stats / routes / serve` |
+| Web 查询服务 `web` | 零依赖轻量 HTTP API：把检索/坍缩推荐/知识库问答/统计暴露为 REST 接口，供前端与脚本便捷调用 |
 
 ## 三、快速开始
 
@@ -58,6 +59,9 @@ python -m shengxuezhidao export data/schools.json
 
 # 自动更新：从外部 JSON 数据源同步并导出
 python -m shengxuezhidao update data/schools.json --export data/schools.json
+
+# 启动轻量 HTTP 查询服务（便捷查询，供任意前端/脚本调用）
+python -m shengxuezhidao serve --host 127.0.0.1 --port 8000
 ```
 
 ### 推荐示例（坍缩）
@@ -179,14 +183,64 @@ CLI 参数  >  环境变量  >  JSON 配置文件  >  内置默认(DeepSeek)
   3. 支持 `--dry-run` 先比对再落地。
   - 建议用独立 `data_source/` 目录维护官方数据，正式生产可接定时调度。
 
-## 六、测试
+## 六、Web 查询服务（HTTP API）
+
+本体提供零依赖的轻量 REST 服务，把检索/坍缩推荐/知识库问答/统计暴露成接口，
+便于任何前端、脚本做“便捷查询”。
+
+### 启动服务
+
+```bash
+python -m shengxuezhidao serve --host 127.0.0.1 --port 8000
+```
+
+> 仅用 Python 标准库实现，无需安装 Flask。加 `Ctrl+C` 即可停止。
+
+### 端点一览
+
+| 端点 | 方法 | 说明 |
+|------|------|------|
+| `/health` | GET | 健康检查（含资料库学校数） |
+| `/stats` | GET | 资料库统计（按国家/排名段/线路分布） |
+| `/routes` | GET | 可选升学路径线路说明 |
+| `/search` | GET/POST | 多维检索（国家/QS分段/专业/线路/关键词/预算） |
+| `/recommend` | POST | 学生画像坍缩推荐（低门槛/难度偏好） |
+| `/ask` | GET/POST | 知识库问答 / 二次询问（可接 LLM） |
+| `/llm-config` | GET | 查看当前 LLM 接入配置 |
+
+所有接口均返回 `{"ok": bool, "data": ...}`，utf-8 JSON；已带 CORS 头，浏览器可跨域直连。
+
+### 使用示例
+
+```bash
+# 健康检查
+curl http://127.0.0.1:8000/health
+
+# 检索：英国接受 A-Level 的学校
+curl "http://127.0.0.1:8000/search?country=英国&route=alevel"
+
+# 坍缩推荐：国内高考生、IELTS 6.5、预算 40 万、倾向低门槛
+curl -X POST http://127.0.0.1:8000/recommend -H 'Content-Type: application/json' \
+  -d '{"route":"gaokao","ielts":6.5,"budget":400000,"low":true,"top":5}'
+
+# 知识库问答
+curl "http://127.0.0.1:8000/ask?q=澳洲哪些学校接受高考成绩"
+curl -X POST http://127.0.0.1:8000/ask -H 'Content-Type: application/json' \
+  -d '{"question":"曼彻斯特大学高考要多少分？","country":"英国"}'
+```
+
+> 建议 GET 的中文参数做一次 URL 编码；`POST /recommend` 支持
+> `nationality / route / ielts / gpa / budget / countries / majors / low / top`
+> 等画像字段，未坍缩出方案时会附带 `clarify` 追问清单。
+
+## 七、测试
 
 ```bash
 pip install -e ".[dev]"
 python -m pytest -q
 ```
 
-## 七、项目结构
+## 八、项目结构
 
 ```
 src/shengxuezhidao/
@@ -195,6 +249,7 @@ src/shengxuezhidao/
   ai/      # 知识库 KB + LLM 配置(config.py) + AI 助手(assistant.py)
   data/    # 种子数据 + 自动更新 updater
   cli/     # 命令行入口
+  web/     # 轻量 HTTP 查询服务(server.py, 零依赖 REST API)
 examples/  # LLM 配置模板等示例文件
 data/      # 导出的资料库 JSON（演示）
 tests/     # pytest 测试

@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "shengxuezhidao"
-version = "0.2.0"
-description = "全球Top500大学升学智能查询系统本体 - 多路径检索 + 学生画像坍缩推荐 + AI知识库问答"
+version = "0.3.0"
+description = "全球Top500大学升学智能查询系统本体 - 多路径检索 + 学生画像坍缩推荐 + AI知识库问答 + 轻量HTTP查询服务"
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
